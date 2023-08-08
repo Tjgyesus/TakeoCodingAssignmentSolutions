@@ -2,7 +2,7 @@ package week2.Assignments.Assignment6;
 
 import java.util.Scanner;
 
-public class challeng2 {
+public class SumOfString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
