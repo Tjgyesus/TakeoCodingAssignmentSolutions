@@ -19,7 +19,7 @@ public class CountLeg {
         cows(numberCows);
         pigs(numberPigs);
 
-        int totalNumberOfLegs = chickens(2)+cows(3)+pigs(5);
+        int totalNumberOfLegs = chickens(numberChickens)+cows(numberCows)+pigs(numberPigs);
         System.out.println(totalNumberOfLegs);
     }
     static int chickens(int numberofChicken){

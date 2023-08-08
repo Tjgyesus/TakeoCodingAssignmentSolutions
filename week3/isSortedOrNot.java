@@ -3,7 +3,7 @@ package Day1;
 public class isSortedOrNot {
     public static void main(String[] args) {
 
-        int[] arr = {14,2,5,7};
+        int[] arr = {6,1,2,5,7};
         boolean result=false;
         if (arr.length == 1 || arr.length == 0) {
             result = true;

@@ -18,7 +18,7 @@ public class MaxAndMin {
                 min=numbers[i];
             }
         }
-        System.out.println(max);
-        System.out.println(min);
+        System.out.println("Largest is: "+max);
+        System.out.println("Smallest is: "+min);
     }
 }
