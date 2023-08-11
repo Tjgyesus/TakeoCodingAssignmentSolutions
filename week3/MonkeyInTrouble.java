@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class monkeyInTrouble {
+public class MonkeyInTrouble {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("is monkey A smiling? true/false");

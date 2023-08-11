@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class maxOfArray {
+public class MaxOfArray {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
 

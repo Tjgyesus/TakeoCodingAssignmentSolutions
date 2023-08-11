@@ -1,6 +1,6 @@
 package Day1;
 
-public class isSortedOrNot {
+public class IsSortedOrNot {
     public static void main(String[] args) {
 
         int[] arr = {6,1,2,5,7};

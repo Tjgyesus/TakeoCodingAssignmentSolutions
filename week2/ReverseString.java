@@ -11,8 +11,6 @@ public class ReverseString {
         for (int i = 0; i < input.length(); i++) {
             char temp = input.charAt(i);
             reversed = temp+reversed;
-
-
         }
         System.out.println(reversed);
     }

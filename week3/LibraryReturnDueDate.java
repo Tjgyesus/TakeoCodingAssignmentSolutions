@@ -1,10 +1,8 @@
 package Day1;
 
-import java.security.spec.RSAOtherPrimeInfo;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class libraryReturnDueDate {
+public class LibraryReturnDueDate {
     public static void main(String[] args) {
         int fine = 0;
         Scanner scanner = new Scanner(System.in);

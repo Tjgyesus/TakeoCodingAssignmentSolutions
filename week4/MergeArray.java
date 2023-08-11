@@ -1,11 +1,9 @@
 package week4;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
-public class mergeArray {
+public class MergeArray {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();

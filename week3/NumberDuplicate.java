@@ -1,8 +1,6 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Scanner;
 
-public class numberDuplicate {
+public class NumberDuplicate {
     public static void main(String[] args) {
         int[] numberArray = {1,1,2,2,3,4,5};
         int n = numberArray.length;

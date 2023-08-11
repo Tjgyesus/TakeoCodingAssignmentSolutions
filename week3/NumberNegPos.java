@@ -2,7 +2,7 @@ package Day1;
 
 import java.util.Arrays;
 
-public class numberNegPos {
+public class NumberNegPos {
     public static void main(String[] args) {
         int[] arr = {10,20,-30,44,55,0,-50};
 
