@@ -1,4 +1,4 @@
-package student;
+package Day1.student;
 
 class Student {
 
