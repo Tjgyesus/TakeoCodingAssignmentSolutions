@@ -25,9 +25,19 @@ public class SumTargetOfTwoNumbers {
                 if (nums[i] + nums[j] == target) {
                     sumToMakeTarget = new int[]{nums[i], nums[j]};
                 }
+                else {
+                    sumToMakeTarget = null;
+                }
 
             }
-        } System.out.println("The numbers that make "+target+" are "+Arrays.toString(sumToMakeTarget));
+        }
+        if(sumToMakeTarget==null){
+            System.out.println("No numbers to make up the target: "+target);
+        }
+        else{
+            System.out.println("The numbers that make "+target+" are "+Arrays.toString(sumToMakeTarget));
+
+        }
     }
 
 
