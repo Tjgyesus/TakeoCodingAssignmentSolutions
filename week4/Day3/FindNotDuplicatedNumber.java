@@ -2,11 +2,14 @@ package Day3;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class FindNotDuplicatedNumber {
     public static void main(String[] args) {
 
-        int[] nums = {4, 2, 5, 2, 4};
+
+
+        int[] nums = {1, 2, 3, 2, 1};
         int result = 0;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
@@ -25,7 +28,7 @@ public class FindNotDuplicatedNumber {
                     result=newMap.getKey();
                 }
             }
-            System.out.println(result);
+            System.out.println("Non repeated Number is: "+result);
         }
 
             }
