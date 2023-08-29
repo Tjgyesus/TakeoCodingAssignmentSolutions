@@ -1,0 +1,41 @@
+Exercise 1 : WAP in Java to create a table in database using jdbc with following specification :
+                table : Company(id,name,code,location)
+            -- write code to insert data in same table.
+            -- write code to retrieve data in same table.
+            -- write code to delete data in same table.
+
+
+Exercise 3 : With already created table authors,books,book_loan .write queries to fetch data for given scenario : 
+
+1) Display authors along with the total number of times their books have been borrowed.
+
+
+select author_name, count(bl.book_id) 
+from public.authors au
+join public.books b on au.author_id = b.author_id 
+join public.books_loan bl on bl.book_id = b.book_id 
+group by au.author_name
+
+*****************************************************************************************************
+    
+
+2) List authors who haven't written any books in the database.
+
+select a.author_name from public.books b 
+right join public.authors a 
+on b.author_id = a.author_id
+where b.book_name is null
+
+
+
+*****************************************************************************************************
+
+3) List the books borrowed by a specific student . (any student name here ,that is present in db)
+
+select bl.student_name, b.book_name, b.book_title, a.author_name, bl.loan_date 
+from public.books_loan bl
+left join public.books b on bl.book_id = b.book_id
+left join public.authors a on a.author_id = b.author_id 
+where student_name='Aseem'
+
+

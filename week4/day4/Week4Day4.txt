@@ -1,0 +1,159 @@
+1. Create the Authors table with fields :
+       author_id,author_name,author_code
+
+
+CREATE TABLE IF NOT EXISTS public.authors
+(
+    author_id bigint,
+    author_name character varying,
+    author_code character varying,
+    PRIMARY KEY (author_id)
+)
+
+******************************************************************************************
+
+
+2. Create the Books table, referencing the Authors table with a foreign key:
+       book_id,book_name,title,author_id,publication_year
+
+CREATE TABLE IF NOT EXISTS public.books
+(
+    book_id bigint,
+    book_name character varying ,
+    book_title character varying ,
+    publication_year bigint,
+    author_id bigint,
+    CONSTRAINT books_pkey PRIMARY KEY (book_id),
+    CONSTRAINT fk_book_author_id FOREIGN KEY (author_id)
+        REFERENCES public.authors (author_id) 
+    
+)
+
+
+******************************************************************************************
+
+
+3. Create the BookLoans table, referencing both Books and Authors tables with foreign keys:
+         lon_id,student_name,loan_date,due_date,book_id,author_id
+
+
+
+CREATE TABLE IF NOT EXISTS public.books_loan
+(
+    loan_id bigint NOT NULL,
+    student_name character varying ,
+    loan_date character varying,
+    due_date character varying 
+    CONSTRAINT books_loan_pkey PRIMARY KEY (loan_id),
+    CONSTRAINT fk_book_loan_book_id FOREIGN KEY (book_id)
+        REFERENCES public.books (book_id
+)
+
+
+******************************************************************************************
+
+4. Insert at least 10 records in each table.
+
+INSERT INTO public.authors VALUES (1, 'Deepak', 'DEP');
+INSERT INTO public.authors VALUES (2, 'Shree', 'SHR');
+INSERT INTO public.authors VALUES (3, 'John', 'JHN');
+INSERT INTO public.authors VALUES (4, 'Danny', 'DNY');
+INSERT INTO public.authors VALUES (5, 'Micheal', 'MKL');
+INSERT INTO public.authors VALUES (6, 'Naddy', 'NDY');
+INSERT INTO public.authors VALUES (7, 'Deepak', 'DEE');
+INSERT INTO public.authors VALUES (8, 'Johnny', 'JHY');
+INSERT INTO public.authors VALUES (9, 'Daniel', 'DAN');
+INSERT INTO public.authors VALUES (10, 'Mike', 'MIK');
+
+
+
+INSERT INTO public.books VALUES (1, 'Harry Potter and the Philosophers Stone', 'Fiction', 1997, 1);
+INSERT INTO public.books VALUES (3, 'Pride and Prejudice', 'Social', 1813, 3);
+INSERT INTO public.books VALUES (4, 'To Kill a Mockingbird', 'Suspense', 1934, 4);
+INSERT INTO public.books VALUES (5, 'The Fellowship of the Ring', 'Inspirational', 1999, 5);
+INSERT INTO public.books VALUES (6, 'Java Sql Queries', 'Programming', 2006, 4);
+INSERT INTO public.books VALUES (7, 'Spring Framework', 'Programming', 2003, 3);
+INSERT INTO public.books VALUES (2, 'Nineteen Eighty-Four', 'Historical', 1949, 2);
+INSERT INTO public.books VALUES (8, 'A Passage To India', 'Historical', 1989, 1);
+INSERT INTO public.books VALUES (9, 'The Sound And the Fury', 'Suspense', 2014, 2);
+INSERT INTO public.books VALUES (10, 'The Alchemist', 'Inspirational', 1993, 4);
+
+
+
+INSERT INTO public.books_loan VALUES (1, ‘Miko’, '23-08-2023', '19-09-2023', 1);
+INSERT INTO public.books_loan VALUES (2, ‘Sami, '10-08-2023', '10-09-2023', 2);
+INSERT INTO public.books_loan VALUES (3, ‘Emma, '23-08-2023', '19-09-2023', 3);
+INSERT INTO public.books_loan VALUES (4, ‘Aman’, '10-08-2023', '10-09-2023', 4);
+INSERT INTO public.books_loan VALUES (5, ‘Ellie’, '15-08-2023', '15-08-2023', 5);
+INSERT INTO public.books_loan VALUES (6, ‘Saba', '23-08-2023', '23-09-2023', 7);
+INSERT INTO public.books_loan VALUES (7, ‘Lulu', '15-08-2023', '15-09-2023', 6);
+INSERT INTO public.books_loan VALUES (8, ’Said’, '10-08-2023', '10-09-2023', 8);
+INSERT INTO public.books_loan VALUES (9, ’Debbe', '10-08-2023', '10-09-2023', 8);
+INSERT INTO public.books_loan VALUES (10, ’Teddy', '10-08-2023', '10-09-2023', 8);
+
+
+******************************************************************************************
+
+
+
+write query to :
+1) Fetch all author details.
+
+select * from public.authors
+
+******************************************************************************************
+
+2) Fetch authors having name start with "A", "N"
+
+
+select * from public.authors where author_name like 'A%' or author_name like 'N%';
+
+
+******************************************************************************************
+
+
+3) Fetch book_name,title,publication from Books table
+
+
+select book_name, book_title, publication_year from public.books;
+
+
+******************************************************************************************
+
+4) Fetch books with publication year between 1993 to 2023 (Insert record in Book table 1969,1946, like that)
+
+
+select * from public.books where publication_year between 1993 and 2023
+
+
+
+******************************************************************************************
+
+5) Fetch all Books with author_id 1
+
+
+select * from public.books where author_id=1
+
+
+******************************************************************************************
+
+
+6) Fetch all Book Loans fields
+
+
+select * from public.books_loan
+
+
+******************************************************************************************
+
+7) Fetch all BookLoans that have same loan date.
+
+
+select *
+from public.books_loan b
+group by loan_date having count(*)>1;
+
+
+
+
+*****************************************************************
